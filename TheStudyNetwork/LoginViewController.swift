@@ -13,7 +13,7 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
     let loginButton = FBSDKLoginButton()
     
     @IBOutlet weak var proceedButton: UIButton!
-    @IBOutlet weak var loginHeader: UILabel!
+    @IBOutlet weak var loginHeader: UINavigationItem!
     @IBOutlet weak var resultTextView: UITextView!
     
     
@@ -27,18 +27,32 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
         loginButton.delegate = self
         if currentToken != nil {
             proceedButton.hidden = false
-            loginHeader.text = "Already Logged In"
+            loginHeader.title = "Already Logged In"
+            //resultTextView.text = loginButton.
         }
         else {
             proceedButton.hidden = true
+            loginHeader.title = "Log in with Facebook"
         }
+        
     }
     func loginButton(loginButton: FBSDKLoginButton!, didCompleteWithResult result: FBSDKLoginManagerLoginResult!, error: NSError!) {
+        
         let currentToken = FBSDKAccessToken.currentAccessToken()
         presentLoginAlertWithStatus("You are now logged in.")
-        loginHeader.text = "Logged In"
+        loginHeader.title = "Logged In"
         if currentToken != nil {
             proceedButton.hidden = false
+            // Get List Of Friends
+            let fbRequest = FBSDKGraphRequest(graphPath:"me?fields=id,name,friends", parameters: nil);
+            fbRequest.startWithCompletionHandler { (connection : FBSDKGraphRequestConnection!, result : AnyObject!, error : NSError!) -> Void in
+                
+                if error == nil {
+                    print("Friends are: \(result)")
+                } else {
+                    print("Error Getting Friends \(error)");
+                }
+            }
         }
         else {
             proceedButton.hidden = true
@@ -48,7 +62,7 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
     func loginButtonDidLogOut(loginButton: FBSDKLoginButton!) {
         
         presentLoginAlertWithStatus("You have successfully logged out.")
-        loginHeader.text = "Logged Out"
+        loginHeader.title = "Log in with Facebook"
         proceedButton.hidden = true
         
         
