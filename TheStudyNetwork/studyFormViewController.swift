@@ -29,7 +29,6 @@ class studyFormViewController: UIViewController,UIPickerViewDataSource,UIPickerV
     var Subject = ""
     let picker2Data = ["What're You Studying?", "Aesthetic and Interpretive Understanding", "African and African American Studies", "Anthropology", "Applied Mathematics", "Applied Physics", "Astronomy",  "Bioengineering", "Celtic Languages and Literatures", "Chemistry and Chemical Biology", "Computer Science",  "The Classics", "Comparative Literature",  "Culture and Belief", "Earth and Planetary Sciences", "East Asian Languages and Civilizations", "Economics", "Electrical Engineering", "Empirical and Mathematical Reasoning", "English", "Environmental Science & Engineering", "Ethical Reasoning", "Germanic Languages and Literatures", "Government", "History", "History of Art and Architecture", "History of Science", "Human Evolutionary Biology", "Linguistics", "Materials Science & Mechanical Engineering", "Mathematics", "Molecular and Cellular Biology", "Music", "Near Eastern Languages and Civilizations", "Organismic and Evolutionary Biology", "Philosophy", "Physics", "Psychology", "Romance Languages and Literatures", "Science of Living Systems", "Science of the Physical Universe", "Slavic Languages and Literatures", "Societies of the World", "Sociology", "South Asian Studies", "Statistics", "Stem Cell and Regenerative Biology", "United States in the World",  "Visual and Environmental Studies"]
     
-    
     //workType
     @IBOutlet weak var myPicker3: UIPickerView!
     var workType = ""
@@ -89,8 +88,52 @@ class studyFormViewController: UIViewController,UIPickerViewDataSource,UIPickerV
         print(Location)
         print(workType)
         print(Subject)
+        
+        func sendInfoToParse() {
+            
+            var query = PFQuery(className: "User")
+            query.whereKey("facebookid", equalTo: sessionID)
+            query.getFirstObjectInBackgroundWithBlock {
+                (object: PFObject?, error: NSError?) -> Void in
+                if error != nil {
+                    print("The getFirstObject request failed. error: \(error)")
+                } else {
+                    if let obj = object {
+                        obj.setValue(self.Location, forKey: "Location")
+                        obj.setValue(self.workType, forKey: "worktype")
+                        obj.setValue(self.Subject, forKey: "Subject")
+                        obj.setValue(courseCode, forKey: "courseCode")
+                        obj.setValue(Comments, forKey: "Comments")
+                        
+                        obj.saveInBackground()
+                    }
+                }
+                }
+            }
+        sendInfoToParse()
+    
+        }
+        
+        /*(gameScore: PFObject?, error: NSError?) -> Void in
+            if error != nil {
+                print(error)
+            } else if let gameScore = gameScore {
+                gameScore["cheatMode"] = true
+                gameScore["score"] = 1338
+                gameScore.saveInBackground()
+            }
+        }
+
+        let query = PFQuery(className:"User")
+        query.whereKey("facebookid", equalTo: sessionID)
+        query["viewed"] = "hey"
+        object!.saveInBackgroundwithBlock()
+    }
+    */
+
         // send to parse
-        let UserObject = PFObject(className: "User")
+    
+    /* let UserObject = PFObject(className: "User")
         UserObject["Subject"] = Subject
         UserObject["courseCode"] = courseCode
         UserObject["Location"] = Location
@@ -99,10 +142,11 @@ class studyFormViewController: UIViewController,UIPickerViewDataSource,UIPickerV
         UserObject.saveInBackgroundWithBlock{
             (success: Bool, error: NSError?) -> Void in
         }
-        
+
         whatStudying.text = ""
         Location = ""
         workType = ""
         commentInput.text = ""
     }
+*/
 }

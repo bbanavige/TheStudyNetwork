@@ -11,6 +11,7 @@ import Parse
 import Bolts
 import ParseUI
 
+var sessionID:String! = ""
 
 class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
     
@@ -67,12 +68,6 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
             // Get List Of Friends
             let fbRequest = FBSDKGraphRequest(graphPath:"me?fields=id,name,friends", parameters: nil);
             fbRequest.startWithCompletionHandler { (connection : FBSDKGraphRequestConnection!, result : AnyObject!, error : NSError!) -> Void in
-                
-                if error == nil {
-                    print("Friends are: \(result["friends"]!["data"]!)")
-                } else {
-                    print("Error Getting Friends \(error)");
-                }
             }
         }
         else {
@@ -85,6 +80,7 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
         presentLoginAlertWithStatus("You have successfully logged out.")
         loginHeader.title = "Log in with Facebook"
         proceedButton.hidden = true
+        sessionID = ""
         
         
     }
@@ -113,20 +109,30 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
         req.startWithCompletionHandler({ (connection, result, error : NSError!) -> Void in
             if(error == nil)
             {
-                print("result \(result["name"])")
                 var name = result["name"]
                 var facebookid = result["id"]
+                sessionID = facebookid as! String
                 var email = result["email"]
-                
-                // send to parse
-                var query
-                let UserObject = PFObject(className: "User")
-                UserObject["name"] = name
-                UserObject["facebookid"] = facebookid
-                UserObject["email"] = email
-                
-                UserObject.saveInBackgroundWithBlock{
-                    (success: Bool, error: NSError?) -> Void in
+                print("result: \(name)\n\(facebookid)\n\(email)")
+                var query = PFQuery(className: "User")
+                query.whereKey("facebookid", equalTo: facebookid)
+                query.getFirstObjectInBackgroundWithBlock {
+                    (object: PFObject?, error: NSError?) -> Void in
+                    if error == nil {
+                        print(error)
+                    }
+                    else {
+                        print("result: \(name)\n\(facebookid)\n\(email)")
+                        // send to parse
+                        let UserObject = PFObject(className: "User")
+                        UserObject["name"] = result["name"]
+                        UserObject["facebookid"] = result["id"]
+                        UserObject["email"] = result["email"]
+                        print(name, facebookid, email)
+                        UserObject.saveInBackgroundWithBlock{
+                            (success: Bool, error: NSError?) -> Void in
+                        }
+                    }
                 }
                 
                 name = ""
@@ -140,6 +146,8 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
         })
         
     }
+    
+    
 
     
 }
