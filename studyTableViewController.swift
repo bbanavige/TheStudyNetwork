@@ -9,10 +9,25 @@
 import UIKit
 import Parse
 import Bolts
+import ParseUI
 
-class studyTableViewController: UITableViewController {
+class studyTableViewController: PFQueryTableViewController {
+
+    override init(style: UITableViewStyle, className: String!) {
+        super.init(style: UITableViewStyle.Plain, className: className)
+    }
     
-    // MARK: Properties
+    required init(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)!
+        
+        // Configure the PFQueryTableView
+        self.parseClassName = "Users"
+        self.textKey = "Subject"
+        self.pullToRefreshEnabled = true
+        self.paginationEnabled = false
+    }
+
+    /*/ MARK: Properties
     func loadData(){
         let query = PFQuery(className:"TestObject")
         query.findObjectsInBackgroundWithBlock {
@@ -32,4 +47,10 @@ class studyTableViewController: UITableViewController {
             }
         }
     }
+    // Define the query that will provide the data for the table view
+    override func queryForTable() -> PFQuery {
+        var query = PFQuery(className: "Countries")
+        query.orderByAscending("nameEnglish")
+        return query
+    }*/
 }

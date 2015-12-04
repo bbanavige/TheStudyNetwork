@@ -7,6 +7,10 @@
 //
 
 import UIKit
+import Parse
+import Bolts
+import ParseUI
+
 
 class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
     
@@ -15,7 +19,6 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
     @IBOutlet weak var proceedButton: UIButton!
     @IBOutlet weak var loginHeader: UINavigationItem!
     @IBOutlet weak var resultTextView: UITextView!
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,11 +37,29 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
             proceedButton.hidden = true
             loginHeader.title = "Log in with Facebook"
         }
-        
     }
+    
     func loginButton(loginButton: FBSDKLoginButton!, didCompleteWithResult result: FBSDKLoginManagerLoginResult!, error: NSError!) {
         
+        /*let accessToken = FBSDKAccessToken.currentAccessToken()
+        let req = FBSDKGraphRequest(graphPath: "me", parameters: ["fields":"email,name"], tokenString: accessToken.tokenString, version: nil, HTTPMethod: "GET")
+        req.startWithCompletionHandler({ (connection, result, error : NSError!) -> Void in
+            if(error == nil)
+            {
+                print("result \(result["name"])")
+                var name = result["name"]
+                var facebookid = result["id"]
+                var email = result["email"]
+            }
+            else
+            {
+                print("error \(error)")
+            }
+        })*/
+
+        
         let currentToken = FBSDKAccessToken.currentAccessToken()
+        print("token: \(result.grantedPermissions)")
         presentLoginAlertWithStatus("You are now logged in.")
         loginHeader.title = "Logged In"
         if currentToken != nil {
@@ -48,7 +69,7 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
             fbRequest.startWithCompletionHandler { (connection : FBSDKGraphRequestConnection!, result : AnyObject!, error : NSError!) -> Void in
                 
                 if error == nil {
-                    print("Friends are: \(result)")
+                    print("Friends are: \(result["friends"]!["data"]!)")
                 } else {
                     print("Error Getting Friends \(error)");
                 }
@@ -85,5 +106,40 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
         
     }
     
+    @IBAction func Submit(sender: AnyObject) {
+        
+        let accessToken = FBSDKAccessToken.currentAccessToken()
+        let req = FBSDKGraphRequest(graphPath: "me", parameters: ["fields":"email,name"], tokenString: accessToken.tokenString, version: nil, HTTPMethod: "GET")
+        req.startWithCompletionHandler({ (connection, result, error : NSError!) -> Void in
+            if(error == nil)
+            {
+                print("result \(result["name"])")
+                var name = result["name"]
+                var facebookid = result["id"]
+                var email = result["email"]
+                
+                // send to parse
+                var query
+                let UserObject = PFObject(className: "User")
+                UserObject["name"] = name
+                UserObject["facebookid"] = facebookid
+                UserObject["email"] = email
+                
+                UserObject.saveInBackgroundWithBlock{
+                    (success: Bool, error: NSError?) -> Void in
+                }
+                
+                name = ""
+                facebookid = ""
+                email = ""
+            }
+            else
+            {
+                print("error \(error)")
+            }
+        })
+        
+    }
+
     
 }

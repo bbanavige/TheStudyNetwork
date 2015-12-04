@@ -27,14 +27,14 @@
         <!--Who's Studying?-->
         <scene sceneID="RI8-9i-VNz">
             <objects>
-                <tableViewController title="Who's Studying?" id="tSc-l2-ZgJ" customClass="studyTableViewController" customModule="TheStudyNetwork" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController title="Who's Studying?" id="tSc-l2-ZgJ" customClass="ObjectsTableViewController" customModule="TheStudyNetwork" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="77" sectionHeaderHeight="28" sectionFooterHeight="28" id="v1M-W1-fYi">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="studyTableViewCell" rowHeight="90" id="wJa-cu-Zgl" customClass="studyTableViewCell" customModule="TheStudyNetwork" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="90" id="wJa-cu-Zgl" customClass="PFTableViewCell">
                                 <rect key="frame" x="0.0" y="28" width="600" height="90"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="wJa-cu-Zgl" id="Cyf-Uc-U6S">
@@ -83,12 +83,33 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="to be filled in" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KJb-Y6-KbO">
-                                            <rect key="frame" x="75" y="60" width="517" height="21"/>
+                                            <rect key="frame" x="75" y="60" width="516.5" height="21"/>
                                             <animations/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Iqw-x3-ZJD">
+                                            <rect key="frame" x="510" y="0.0" width="81.5" height="81.5"/>
+                                            <animations/>
+                                        </mapView>
+                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qd5-wI-70T">
+                                            <rect key="frame" x="353" y="26" width="130" height="30"/>
+                                            <animations/>
+                                            <state key="normal" title="Send FB Message"/>
+                                        </button>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Get in Touch!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aIp-rE-zpC">
+                                            <rect key="frame" x="353" y="9" width="110" height="21"/>
+                                            <animations/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RiK-dM-G06">
+                                            <rect key="frame" x="353" y="55" width="77" height="30"/>
+                                            <animations/>
+                                            <state key="normal" title="Send SMS"/>
+                                        </button>
                                     </subviews>
                                     <animations/>
                                 </tableViewCellContentView>
@@ -125,8 +146,58 @@
                     <view key="view" contentMode="scaleToFill" id="axD-Gl-Uof">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" alwaysBounceVertical="YES" keyboardDismissMode="onDrag" translatesAutoresizingMaskIntoConstraints="NO" id="KH4-eH-Bzu">
+                                <rect key="frame" x="0.0" y="64" width="600" height="481"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qG2-SF-K49">
+                                        <rect key="frame" x="181" y="443" width="239" height="30"/>
+                                        <animations/>
+                                        <color key="backgroundColor" red="0.91163793100000001" green="0.90980603449999997" blue="0.91136853449999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <state key="normal" title="Submit"/>
+                                        <connections>
+                                            <action selector="Submit:" destination="iGT-eb-Tfx" eventType="touchUpInside" id="slr-T2-wdc"/>
+                                        </connections>
+                                    </button>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Comments" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="j3z-Kx-oCt">
+                                        <rect key="frame" x="184" y="396" width="233" height="30"/>
+                                        <animations/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="stB-PV-3sf">
+                                        <rect key="frame" x="96" y="247" width="409" height="56"/>
+                                        <animations/>
+                                    </pickerView>
+                                    <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WR6-o9-OcM">
+                                        <rect key="frame" x="217" y="153" width="166" height="56"/>
+                                        <animations/>
+                                    </pickerView>
+                                    <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="k8p-no-Qym">
+                                        <rect key="frame" x="94" y="57" width="413" height="56"/>
+                                        <animations/>
+                                    </pickerView>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Course Code (Optional)" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="r0l-WV-DCt">
+                                        <rect key="frame" x="184" y="341" width="233" height="30"/>
+                                        <animations/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <textInputTraits key="textInputTraits" returnKeyType="go"/>
+                                    </textField>
+                                </subviews>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="qG2-SF-K49" secondAttribute="bottom" constant="20" id="LMB-gq-6Cp"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="KH4-eH-Bzu" firstAttribute="leading" secondItem="axD-Gl-Uof" secondAttribute="leadingMargin" constant="-20" id="056-z4-tz9"/>
+                            <constraint firstItem="KH4-eH-Bzu" firstAttribute="top" secondItem="MfB-sy-n0f" secondAttribute="bottom" id="8Zq-yN-rep"/>
+                            <constraint firstItem="U1V-Ff-PoQ" firstAttribute="top" secondItem="KH4-eH-Bzu" secondAttribute="bottom" constant="6" id="MXM-8p-KWF"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="I'm Studying" id="spd-k4-nTL"/>
                     <navigationItem key="navigationItem" title="Where Are You Studying?" id="YqU-D4-uBA">
@@ -136,6 +207,13 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="commentInput" destination="j3z-Kx-oCt" id="yi2-0L-3xL"/>
+                        <outlet property="myPicker1" destination="k8p-no-Qym" id="wdg-sh-nun"/>
+                        <outlet property="myPicker2" destination="WR6-o9-OcM" id="7EC-12-L2z"/>
+                        <outlet property="myPicker3" destination="stB-PV-3sf" id="htb-rs-ycV"/>
+                        <outlet property="whatStudying" destination="r0l-WV-DCt" id="tKv-Yh-xh9"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7wQ-bK-gmw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -276,6 +354,7 @@
                                 <color key="backgroundColor" red="0.91163793100000001" green="0.90980603449999997" blue="0.91136853449999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="Continue"/>
                                 <connections>
+                                    <action selector="Submit:" destination="k9S-Mg-LfP" eventType="touchUpInside" id="TvV-fQ-aZD"/>
                                     <segue destination="49e-Tb-3d3" kind="presentation" id="8db-xd-Y1e"/>
                                 </connections>
                             </button>

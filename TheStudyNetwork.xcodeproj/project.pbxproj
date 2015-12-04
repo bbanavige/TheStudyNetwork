@@ -33,6 +33,8 @@
 		B58E72571C114EEC0072DB55 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B58E72561C114EEC0072DB55 /* SystemConfiguration.framework */; };
 		B58E72591C114EFD0072DB55 /* libz.1.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = B58E72581C114EFD0072DB55 /* libz.1.dylib */; };
 		B58E725B1C114F2D0072DB55 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = B58E725A1C114F2D0072DB55 /* libsqlite3.dylib */; };
+		B58E72D61C1169370072DB55 /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B58E72D51C1169370072DB55 /* ParseUI.framework */; };
+		B58E72D81C1190600072DB55 /* ObjectsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58E72D71C1190600072DB55 /* ObjectsTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +79,8 @@
 		B58E72561C114EEC0072DB55 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		B58E72581C114EFD0072DB55 /* libz.1.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.1.dylib; path = ../../../../../../../../../usr/lib/libz.1.dylib; sourceTree = "<group>"; };
 		B58E725A1C114F2D0072DB55 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = ../../../../../../../../../usr/lib/libsqlite3.dylib; sourceTree = "<group>"; };
+		B58E72D51C1169370072DB55 /* ParseUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseUI.framework; sourceTree = "<group>"; };
+		B58E72D71C1190600072DB55 /* ObjectsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObjectsTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +100,7 @@
 				B58E71DD1C0A58CE0072DB55 /* FBSDKLoginKit.framework in Frameworks */,
 				B58E71DC1C0A58CD0072DB55 /* FBSDKCoreKit.framework in Frameworks */,
 				B58E71DE1C0A58CE0072DB55 /* FBSDKShareKit.framework in Frameworks */,
+				B58E72D61C1169370072DB55 /* ParseUI.framework in Frameworks */,
 				B58E72481C114E900072DB55 /* Bolts.framework in Frameworks */,
 				B58E72491C114E900072DB55 /* Parse.framework in Frameworks */,
 			);
@@ -133,10 +138,10 @@
 		B58E71B51C0A58B20072DB55 /* TheStudyNetwork */ = {
 			isa = PBXGroup;
 			children = (
+				B58E72D71C1190600072DB55 /* ObjectsTableViewController.swift */,
 				B58E71B61C0A58B20072DB55 /* AppDelegate.swift */,
 				B58E71E21C0A5D0D0072DB55 /* LoginViewController.swift */,
 				B58E723E1C1141E70072DB55 /* studyTableViewController.swift */,
-				B58E72441C11478D0072DB55 /* studyTableViewCell.swift */,
 				B58E72401C1142760072DB55 /* studyFormViewController.swift */,
 				B58E72421C1142B40072DB55 /* settingsViewController.swift */,
 				B58E71E91C1022A30072DB55 /* mapViewController.swift */,
@@ -146,6 +151,7 @@
 				B58E71F51C10D7020072DB55 /* gear.png */,
 				B58E71C11C0A58B20072DB55 /* LaunchScreen.storyboard */,
 				B58E71C41C0A58B20072DB55 /* Info.plist */,
+				B58E72441C11478D0072DB55 /* studyTableViewCell.swift */,
 			);
 			path = TheStudyNetwork;
 			sourceTree = "<group>";
@@ -162,6 +168,7 @@
 		B58E71D81C0A58C20072DB55 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B58E72D51C1169370072DB55 /* ParseUI.framework */,
 				B58E725A1C114F2D0072DB55 /* libsqlite3.dylib */,
 				B58E72581C114EFD0072DB55 /* libz.1.dylib */,
 				B58E72561C114EEC0072DB55 /* SystemConfiguration.framework */,
@@ -284,6 +291,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B58E72D81C1190600072DB55 /* ObjectsTableViewController.swift in Sources */,
 				B58E71E31C0A5D0D0072DB55 /* LoginViewController.swift in Sources */,
 				B58E72451C11478D0072DB55 /* studyTableViewCell.swift in Sources */,
 				B58E72411C1142760072DB55 /* studyFormViewController.swift in Sources */,
@@ -480,6 +488,7 @@
 				B58E71D41C0A58B20072DB55 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B58E71D51C0A58B20072DB55 /* Build configuration list for PBXNativeTarget "TheStudyNetworkTests" */ = {
 			isa = XCConfigurationList;
@@ -488,6 +497,7 @@
 				B58E71D71C0A58B20072DB55 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
