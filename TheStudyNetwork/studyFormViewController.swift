@@ -22,7 +22,7 @@ class studyFormViewController: UIViewController,UIPickerViewDataSource,UIPickerV
     //location
     @IBOutlet weak var myPicker1: UIPickerView!
     var Location = ""
-    let picker1Data = ["Are You Actually Studying?", "Where're you studying?", "Widener Library", "Lamont Library", "Science Center",  "Law School Library", "The Yard", "Adams House", "Cabot House", "Currier House", "Dunster House", "Eliot House", "Kirkland House", "Leverett House", "Lowell House", "Mather House", "Pforzheimer House", "Quincy House", "Winthrop House"]
+    let picker1Data = ["Are You Actually Studying?", "Where're you studying?", "Widener", "Lamont", "Cabot Science Library", "Science Center", "Annenberg", "Law School Library", "Yard", "Adams", "Cabot", "Currier", "Dunster", "Eliot", "Kirkland", "Leverett", "Lowell", "Mather", "Pforzheimer", "Quincy", "Winthrop"]
     
     //Subject
     @IBOutlet weak var myPicker2: UIPickerView!
