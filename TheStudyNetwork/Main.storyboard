@@ -68,7 +68,7 @@
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="to be filled in" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RzX-nV-d4x">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="... who is studying ..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RzX-nV-d4x">
                                             <rect key="frame" x="61" y="8" width="517" height="21"/>
                                             <animations/>
                                             <fontDescription key="fontDescription" type="system" pointSize="10"/>
@@ -90,21 +90,21 @@
                                             <state key="normal" title="Send FB Message"/>
                                         </button>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Get in Touch!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aIp-rE-zpC">
-                                            <rect key="frame" x="353" y="9" width="110" height="21"/>
+                                            <rect key="frame" x="353" y="4" width="110" height="21"/>
                                             <animations/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="to be filled in" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="okZ-OT-Z4Q">
-                                            <rect key="frame" x="61" y="34" width="517" height="21"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="... where are you studying ..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KJb-Y6-KbO">
+                                            <rect key="frame" x="61" y="60" width="516.5" height="21"/>
                                             <animations/>
                                             <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="to be filled in" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KJb-Y6-KbO">
-                                            <rect key="frame" x="61" y="60" width="516.5" height="21"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="... what are you studying ..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="okZ-OT-Z4Q">
+                                            <rect key="frame" x="61" y="34" width="517" height="21"/>
                                             <animations/>
                                             <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -137,6 +137,25 @@
             </objects>
             <point key="canvasLocation" x="719" y="-282"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="Yml-vy-zd8">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DGm-WN-AHC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="b1h-Zv-PUT" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="n11-zN-OKv"/>
+                        <viewControllerLayoutGuide type="bottom" id="QFe-N8-QJZ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="HIZ-e3-ngw">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="-689" y="1420"/>
+        </scene>
         <!--Where Are You Studying?-->
         <scene sceneID="MEN-YB-Nga">
             <objects>
@@ -149,75 +168,92 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" alwaysBounceVertical="YES" keyboardDismissMode="onDrag" translatesAutoresizingMaskIntoConstraints="NO" id="KH4-eH-Bzu">
-                                <rect key="frame" x="0.0" y="64" width="600" height="481"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fsL-s6-1WE">
+                                <rect key="frame" x="0.0" y="64" width="600" height="487"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qG2-SF-K49">
-                                        <rect key="frame" x="181" y="443" width="239" height="30"/>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ncB-5U-amF">
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="951"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Where Are You Studying?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Vi-Am-1hW">
+                                                <rect key="frame" x="132" y="8" width="337" height="36"/>
+                                                <animations/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="k8p-no-Qym">
+                                                <rect key="frame" x="140" y="52" width="320" height="216"/>
+                                                <animations/>
+                                            </pickerView>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Course Number" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="r0l-WV-DCt">
+                                                <rect key="frame" x="226" y="495" width="149" height="30"/>
+                                                <animations/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                <textInputTraits key="textInputTraits" returnKeyType="go"/>
+                                            </textField>
+                                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WR6-o9-OcM">
+                                                <rect key="frame" x="140" y="298" width="320" height="216"/>
+                                                <animations/>
+                                            </pickerView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="What Course Are You Studying?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pTE-EH-RNe">
+                                                <rect key="frame" x="88" y="250" width="424" height="36"/>
+                                                <animations/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Any Other Comments?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Jp-bJ-DCy">
+                                                <rect key="frame" x="138" y="783" width="303" height="36"/>
+                                                <animations/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Comments" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="j3z-Kx-oCt">
+                                                <rect key="frame" x="235" y="827" width="109" height="30"/>
+                                                <animations/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qG2-SF-K49">
+                                                <rect key="frame" x="260" y="860" width="58" height="34"/>
+                                                <animations/>
+                                                <color key="backgroundColor" red="0.91163793100000001" green="0.90980603449999997" blue="0.91136853449999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                <state key="normal" title="Submit"/>
+                                                <connections>
+                                                    <action selector="Submit:" destination="iGT-eb-Tfx" eventType="touchUpInside" id="slr-T2-wdc"/>
+                                                </connections>
+                                            </button>
+                                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="stB-PV-3sf">
+                                                <rect key="frame" x="132" y="551" width="320" height="216"/>
+                                                <animations/>
+                                            </pickerView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="What Are You Working on?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="riF-Cd-6LB">
+                                                <rect key="frame" x="123" y="533" width="354" height="36"/>
+                                                <animations/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
                                         <animations/>
-                                        <color key="backgroundColor" red="0.91163793100000001" green="0.90980603449999997" blue="0.91136853449999999" alpha="1" colorSpace="calibratedRGB"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                        <state key="normal" title="Submit"/>
-                                        <connections>
-                                            <action selector="Submit:" destination="iGT-eb-Tfx" eventType="touchUpInside" id="slr-T2-wdc"/>
-                                        </connections>
-                                    </button>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Comments" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="j3z-Kx-oCt">
-                                        <rect key="frame" x="184" y="396" width="233" height="30"/>
-                                        <animations/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
-                                    <pickerView contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="stB-PV-3sf">
-                                        <rect key="frame" x="96" y="247" width="409" height="56"/>
-                                        <animations/>
-                                    </pickerView>
-                                    <pickerView contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WR6-o9-OcM">
-                                        <rect key="frame" x="217" y="153" width="166" height="56"/>
-                                        <animations/>
-                                    </pickerView>
-                                    <pickerView contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="k8p-no-Qym">
-                                        <rect key="frame" x="94" y="57" width="413" height="56"/>
-                                        <animations/>
-                                    </pickerView>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Course Code (Optional)" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="r0l-WV-DCt">
-                                        <rect key="frame" x="184" y="341" width="233" height="30"/>
-                                        <animations/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                        <textInputTraits key="textInputTraits" returnKeyType="go"/>
-                                    </textField>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </view>
                                 </subviews>
                                 <animations/>
                                 <constraints>
-                                    <constraint firstItem="WR6-o9-OcM" firstAttribute="top" secondItem="k8p-no-Qym" secondAttribute="bottom" id="0GD-it-dEn"/>
-                                    <constraint firstItem="k8p-no-Qym" firstAttribute="top" secondItem="KH4-eH-Bzu" secondAttribute="top" id="25J-bq-TzK"/>
-                                    <constraint firstItem="stB-PV-3sf" firstAttribute="top" secondItem="WR6-o9-OcM" secondAttribute="bottom" id="6rl-jV-F0V"/>
-                                    <constraint firstItem="k8p-no-Qym" firstAttribute="leading" secondItem="KH4-eH-Bzu" secondAttribute="leading" id="8oF-t8-heU"/>
-                                    <constraint firstAttribute="trailing" secondItem="k8p-no-Qym" secondAttribute="trailing" id="BaD-Lf-f22"/>
-                                    <constraint firstAttribute="trailing" secondItem="r0l-WV-DCt" secondAttribute="trailing" id="CEF-LM-rhU"/>
-                                    <constraint firstItem="r0l-WV-DCt" firstAttribute="top" secondItem="stB-PV-3sf" secondAttribute="bottom" id="DxU-eB-4dR"/>
-                                    <constraint firstItem="qG2-SF-K49" firstAttribute="top" secondItem="j3z-Kx-oCt" secondAttribute="bottom" id="Ef0-dn-brj"/>
-                                    <constraint firstAttribute="trailing" secondItem="qG2-SF-K49" secondAttribute="trailing" id="IbO-ew-Sni"/>
-                                    <constraint firstItem="WR6-o9-OcM" firstAttribute="leading" secondItem="KH4-eH-Bzu" secondAttribute="leading" id="Pej-E1-e7B"/>
-                                    <constraint firstItem="j3z-Kx-oCt" firstAttribute="leading" secondItem="KH4-eH-Bzu" secondAttribute="leading" id="Sdw-BW-P81"/>
-                                    <constraint firstAttribute="trailing" secondItem="j3z-Kx-oCt" secondAttribute="trailing" id="VRL-fx-tVE"/>
-                                    <constraint firstAttribute="bottom" secondItem="qG2-SF-K49" secondAttribute="bottom" id="bc0-fG-LF4"/>
-                                    <constraint firstItem="WR6-o9-OcM" firstAttribute="height" secondItem="k8p-no-Qym" secondAttribute="height" id="deN-KO-Y5h"/>
-                                    <constraint firstAttribute="trailing" secondItem="stB-PV-3sf" secondAttribute="trailing" id="j2L-Mf-HJ6"/>
-                                    <constraint firstItem="j3z-Kx-oCt" firstAttribute="top" secondItem="r0l-WV-DCt" secondAttribute="bottom" id="lKf-bO-8GW"/>
-                                    <constraint firstItem="stB-PV-3sf" firstAttribute="leading" secondItem="KH4-eH-Bzu" secondAttribute="leading" id="mIJ-M2-15j"/>
-                                    <constraint firstItem="stB-PV-3sf" firstAttribute="height" secondItem="k8p-no-Qym" secondAttribute="height" id="mKV-ab-ab3"/>
-                                    <constraint firstItem="r0l-WV-DCt" firstAttribute="leading" secondItem="KH4-eH-Bzu" secondAttribute="leading" id="ofy-yc-lgr"/>
-                                    <constraint firstAttribute="trailing" secondItem="WR6-o9-OcM" secondAttribute="trailing" id="x3d-RW-aJB"/>
-                                    <constraint firstItem="qG2-SF-K49" firstAttribute="leading" secondItem="KH4-eH-Bzu" secondAttribute="leading" id="xuc-hJ-qtG"/>
+                                    <constraint firstAttribute="width" constant="320" id="sNU-o0-CYA"/>
                                 </constraints>
                             </scrollView>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="KH4-eH-Bzu" firstAttribute="top" secondItem="MfB-sy-n0f" secondAttribute="bottom" id="8Zq-yN-rep"/>
-                            <constraint firstItem="U1V-Ff-PoQ" firstAttribute="top" secondItem="KH4-eH-Bzu" secondAttribute="bottom" constant="6" id="MXM-8p-KWF"/>
+                            <constraint firstItem="fsL-s6-1WE" firstAttribute="leading" secondItem="axD-Gl-Uof" secondAttribute="leadingMargin" id="To3-dZ-2mp"/>
+                            <constraint firstItem="fsL-s6-1WE" firstAttribute="top" secondItem="MfB-sy-n0f" secondAttribute="bottom" id="as7-mv-vdc"/>
+                            <constraint firstItem="U1V-Ff-PoQ" firstAttribute="top" secondItem="fsL-s6-1WE" secondAttribute="bottom" id="vQx-7e-Kch"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="fsL-s6-1WE" secondAttribute="trailing" id="xXM-S3-oZB"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="I'm Studying" id="spd-k4-nTL"/>
