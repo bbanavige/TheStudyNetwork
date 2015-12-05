@@ -11,6 +11,10 @@ import Parse
 import Bolts
 import ParseUI
 
+var picker1key:String = ""
+var picker2key:String = ""
+var picker3key:String = ""
+
 class studyFormViewController: UIViewController,UIPickerViewDataSource,UIPickerViewDelegate {
     
     //what studying or courseCode
@@ -18,6 +22,8 @@ class studyFormViewController: UIViewController,UIPickerViewDataSource,UIPickerV
     
     //comments
     @IBOutlet weak var commentInput: UITextField!
+    
+    @IBOutlet weak var phoneNumber: UITextField!
     
     //location
     @IBOutlet weak var myPicker1: UIPickerView!
@@ -61,36 +67,59 @@ class studyFormViewController: UIViewController,UIPickerViewDataSource,UIPickerV
             return picker3Data.count
         }
     }
+
+    
+    func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String?{
+        if (pickerView == myPicker1){
+            return picker1Data[row]
+        }
         
-        func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-            if (pickerView == myPicker1){
-                Location = picker1Data[row]
-                return picker1Data[row]
-            }
-            if (pickerView == myPicker2){
-                Subject = picker2Data[row]
-                return picker2Data[row]
-            }
-            else {
-                workType = picker3Data[row]
-                return picker3Data[row]
-            }
+        else if (pickerView == myPicker2){
+            return picker2Data[row]
+        }
+        else {
+            return picker3Data[row]
+        }
+    
     }
+    
+    func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        if (pickerView == myPicker1){
+            Location = picker1Data[row]
+            print(row)
+            print("Location: \(Location)")
+        }
+        else if (pickerView == myPicker2){
+            Subject = picker2Data[row]
+            print(row)
+            print("Subject: \(Subject)")
+        }
+        else {
+            workType = picker3Data[row]
+            print(row)
+            print("workType: \(workType)")
+        }
+        
+    }
+    
+
+
 
     @IBAction func Submit(sender: AnyObject) {
-        
         // courseCode
         let courseCode = whatStudying.text
         print("coursecode: \(courseCode)")
         // comments
         let Comments = commentInput.text
-        print(Comments)
+        let Phone = phoneNumber.text
+        
         print(Location)
-        print(workType)
         print(Subject)
+        print(workType)
+        print(Phone)
+
         
         func sendInfoToParse() {
-            
             var query = PFQuery(className: "User")
             query.whereKey("facebookid", equalTo: sessionID)
             query.getFirstObjectInBackgroundWithBlock {
@@ -104,6 +133,7 @@ class studyFormViewController: UIViewController,UIPickerViewDataSource,UIPickerV
                         obj.setValue(self.Subject, forKey: "Subject")
                         obj.setValue(courseCode, forKey: "courseCode")
                         obj.setValue(Comments, forKey: "Comments")
+                        obj.setValue(Phone, forKey: "phoneNumber")
                         
                         obj.saveInBackground()
                     }
@@ -113,40 +143,4 @@ class studyFormViewController: UIViewController,UIPickerViewDataSource,UIPickerV
         sendInfoToParse()
     
         }
-        
-        /*(gameScore: PFObject?, error: NSError?) -> Void in
-            if error != nil {
-                print(error)
-            } else if let gameScore = gameScore {
-                gameScore["cheatMode"] = true
-                gameScore["score"] = 1338
-                gameScore.saveInBackground()
-            }
-        }
-
-        let query = PFQuery(className:"User")
-        query.whereKey("facebookid", equalTo: sessionID)
-        query["viewed"] = "hey"
-        object!.saveInBackgroundwithBlock()
-    }
-    */
-
-        // send to parse
-    
-    /* let UserObject = PFObject(className: "User")
-        UserObject["Subject"] = Subject
-        UserObject["courseCode"] = courseCode
-        UserObject["Location"] = Location
-        UserObject["Comments"] = Comments
-        
-        UserObject.saveInBackgroundWithBlock{
-            (success: Bool, error: NSError?) -> Void in
-        }
-
-        whatStudying.text = ""
-        Location = ""
-        workType = ""
-        commentInput.text = ""
-    }
-*/
 }

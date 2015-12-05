@@ -14,7 +14,6 @@
 		B58E71DD1C0A58CE0072DB55 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B58E71DA1C0A58CD0072DB55 /* FBSDKLoginKit.framework */; };
 		B58E71DE1C0A58CE0072DB55 /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B58E71DB1C0A58CD0072DB55 /* FBSDKShareKit.framework */; };
 		B58E71E31C0A5D0D0072DB55 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58E71E21C0A5D0D0072DB55 /* LoginViewController.swift */; };
-		B58E71E61C0B815C0072DB55 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B58E71E51C0B815C0072DB55 /* Main.storyboard */; };
 		B58E71EA1C1022A30072DB55 /* mapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58E71E91C1022A30072DB55 /* mapViewController.swift */; };
 		B58E71F41C10D6980072DB55 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B58E71F31C10D6980072DB55 /* Assets.xcassets */; };
 		B58E71F61C10D7020072DB55 /* gear.png in Resources */ = {isa = PBXBuildFile; fileRef = B58E71F51C10D7020072DB55 /* gear.png */; };
@@ -35,6 +34,9 @@
 		B58E72D61C1169370072DB55 /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B58E72D51C1169370072DB55 /* ParseUI.framework */; };
 		B58E72D81C1190600072DB55 /* ObjectsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58E72D71C1190600072DB55 /* ObjectsTableViewController.swift */; };
 		B58E72DA1C1192F80072DB55 /* customCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58E72D91C1192F80072DB55 /* customCell.swift */; };
+		B5F0AD421C128C5D00A11ABF /* messageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F0AD411C128C5D00A11ABF /* messageController.swift */; };
+		B5F0AD441C13849400A11ABF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B5F0AD431C13849400A11ABF /* Main.storyboard */; };
+		B5F0AD461C138D7A00A11ABF /* sendMessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F0AD451C138D7A00A11ABF /* sendMessageViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,7 +62,6 @@
 		B58E71DB1C0A58CD0072DB55 /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKShareKit.framework; sourceTree = "<group>"; };
 		B58E71E21C0A5D0D0072DB55 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		B58E71E41C0A5F890072DB55 /* bridging-header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "bridging-header.h"; sourceTree = "<group>"; };
-		B58E71E51C0B815C0072DB55 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		B58E71E91C1022A30072DB55 /* mapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = mapViewController.swift; sourceTree = "<group>"; };
 		B58E71F31C10D6980072DB55 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B58E71F51C10D7020072DB55 /* gear.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = gear.png; path = ../gear.png; sourceTree = "<group>"; };
@@ -81,6 +82,9 @@
 		B58E72D51C1169370072DB55 /* ParseUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseUI.framework; sourceTree = "<group>"; };
 		B58E72D71C1190600072DB55 /* ObjectsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObjectsTableViewController.swift; sourceTree = "<group>"; };
 		B58E72D91C1192F80072DB55 /* customCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = customCell.swift; sourceTree = "<group>"; };
+		B5F0AD411C128C5D00A11ABF /* messageController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = messageController.swift; sourceTree = "<group>"; };
+		B5F0AD431C13849400A11ABF /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		B5F0AD451C138D7A00A11ABF /* sendMessageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = sendMessageViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,13 +144,15 @@
 			children = (
 				B58E72D71C1190600072DB55 /* ObjectsTableViewController.swift */,
 				B58E72D91C1192F80072DB55 /* customCell.swift */,
+				B5F0AD451C138D7A00A11ABF /* sendMessageViewController.swift */,
+				B5F0AD411C128C5D00A11ABF /* messageController.swift */,
 				B58E71B61C0A58B20072DB55 /* AppDelegate.swift */,
 				B58E71E21C0A5D0D0072DB55 /* LoginViewController.swift */,
 				B58E723E1C1141E70072DB55 /* studyTableViewController.swift */,
 				B58E72401C1142760072DB55 /* studyFormViewController.swift */,
 				B58E72421C1142B40072DB55 /* settingsViewController.swift */,
 				B58E71E91C1022A30072DB55 /* mapViewController.swift */,
-				B58E71E51C0B815C0072DB55 /* Main.storyboard */,
+				B5F0AD431C13849400A11ABF /* Main.storyboard */,
 				B58E71E41C0A5F890072DB55 /* bridging-header.h */,
 				B58E71F31C10D6980072DB55 /* Assets.xcassets */,
 				B58E71F51C10D7020072DB55 /* gear.png */,
@@ -270,10 +276,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B58E71E61C0B815C0072DB55 /* Main.storyboard in Resources */,
 				B58E71C31C0A58B20072DB55 /* LaunchScreen.storyboard in Resources */,
 				B58E71F61C10D7020072DB55 /* gear.png in Resources */,
 				B58E71F41C10D6980072DB55 /* Assets.xcassets in Resources */,
+				B5F0AD441C13849400A11ABF /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -294,6 +300,8 @@
 				B58E72D81C1190600072DB55 /* ObjectsTableViewController.swift in Sources */,
 				B58E71E31C0A5D0D0072DB55 /* LoginViewController.swift in Sources */,
 				B58E72411C1142760072DB55 /* studyFormViewController.swift in Sources */,
+				B5F0AD421C128C5D00A11ABF /* messageController.swift in Sources */,
+				B5F0AD461C138D7A00A11ABF /* sendMessageViewController.swift in Sources */,
 				B58E723F1C1141E70072DB55 /* studyTableViewController.swift in Sources */,
 				B58E71EA1C1022A30072DB55 /* mapViewController.swift in Sources */,
 				B58E71B71C0A58B20072DB55 /* AppDelegate.swift in Sources */,

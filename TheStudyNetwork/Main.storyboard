@@ -6,39 +6,21 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--I'm Studying-->
-        <scene sceneID="qw8-e8-2Tc">
-            <objects>
-                <navigationController title="I'm Studying" id="HLL-8k-xVy" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="gdV-eQ-sa3"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="OeW-mU-9UC">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <animations/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="iGT-eb-Tfx" kind="relationship" relationship="rootViewController" id="VGh-ri-Mr9"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="W0s-EL-k1B" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="0.0" y="728"/>
-        </scene>
         <!--Who's Studying?-->
         <scene sceneID="RI8-9i-VNz">
             <objects>
                 <tableViewController title="Who's Studying?" id="tSc-l2-ZgJ" customClass="ObjectsTableViewController" customModule="TheStudyNetwork" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="102" sectionHeaderHeight="28" sectionFooterHeight="28" id="v1M-W1-fYi">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="118" sectionHeaderHeight="28" sectionFooterHeight="28" id="v1M-W1-fYi">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="102" id="wJa-cu-Zgl" customClass="customCell" customModule="TheStudyNetwork" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="92" width="600" height="102"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="118" id="wJa-cu-Zgl" customClass="customCell" customModule="TheStudyNetwork" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="92" width="600" height="118"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="wJa-cu-Zgl" id="Cyf-Uc-U6S">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="101.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="117.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ETh-hg-jmO">
@@ -75,27 +57,6 @@
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Iqw-x3-ZJD">
-                                            <rect key="frame" x="510" y="0.0" width="81.5" height="81.5"/>
-                                            <animations/>
-                                        </mapView>
-                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RiK-dM-G06">
-                                            <rect key="frame" x="353" y="55" width="77" height="30"/>
-                                            <animations/>
-                                            <state key="normal" title="Send SMS"/>
-                                        </button>
-                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qd5-wI-70T">
-                                            <rect key="frame" x="353" y="26" width="130" height="30"/>
-                                            <animations/>
-                                            <state key="normal" title="Send FB Message"/>
-                                        </button>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Get in Touch!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aIp-rE-zpC">
-                                            <rect key="frame" x="353" y="9" width="110" height="21"/>
-                                            <animations/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="to be filled in" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="okZ-OT-Z4Q">
                                             <rect key="frame" x="61" y="34" width="517" height="21"/>
                                             <animations/>
@@ -110,8 +71,22 @@
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RiK-dM-G06">
+                                            <rect key="frame" x="8" y="83" width="59" height="22"/>
+                                            <animations/>
+                                            <color key="backgroundColor" red="0.91163793100000001" green="0.90980603449999997" blue="0.91136853449999999" alpha="1" colorSpace="calibratedRGB"/>
+                                            <state key="normal" title="SMS"/>
+                                            <connections>
+                                                <action selector="sendTextMessageButtonTapped:viewController:" destination="wJa-cu-Zgl" eventType="touchUpInside" id="l9w-DL-ygb"/>
+                                                <segue destination="CLS-jD-MkT" kind="presentation" id="O6V-NP-rfu"/>
+                                            </connections>
+                                        </button>
                                     </subviews>
                                     <animations/>
+                                    <constraints>
+                                        <constraint firstItem="RiK-dM-G06" firstAttribute="leading" secondItem="Cyf-Uc-U6S" secondAttribute="leadingMargin" id="1Yi-vd-8mG"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="RiK-dM-G06" secondAttribute="trailing" id="KOg-TK-qFH"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                                 <animations/>
                                 <connections>
@@ -126,7 +101,7 @@
                             <outlet property="delegate" destination="tSc-l2-ZgJ" id="siQ-eI-2Hq"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Item" id="GEi-93-83C"/>
+                    <tabBarItem key="tabBarItem" title="Who's Studying?" id="GEi-93-83C"/>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Who's Studying?" id="cEa-De-3RU"/>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
@@ -135,7 +110,41 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DYC-wQ-4pP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="719" y="-282"/>
+            <point key="canvasLocation" x="719" y="-380"/>
+        </scene>
+        <!--Send Message View Controller-->
+        <scene sceneID="SM9-ps-jlW">
+            <objects>
+                <viewController id="CLS-jD-MkT" customClass="sendMessageViewController" customModule="TheStudyNetwork" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="6Mx-c8-xwz"/>
+                        <viewControllerLayoutGuide type="bottom" id="dNY-Aj-zZJ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="JOT-6S-etp">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DIO-zM-pSs">
+                                <rect key="frame" x="166" y="285" width="269" height="30"/>
+                                <animations/>
+                                <color key="backgroundColor" red="0.91163793100000001" green="0.90980603449999997" blue="0.91136853449999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Send SMS"/>
+                                <connections>
+                                    <action selector="sendTextMessageButtonTapped:" destination="CLS-jD-MkT" eventType="touchUpInside" id="3qF-6I-ETo"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="DIO-zM-pSs" secondAttribute="trailing" id="oRK-mL-ojY"/>
+                            <constraint firstItem="DIO-zM-pSs" firstAttribute="leading" secondItem="JOT-6S-etp" secondAttribute="leadingMargin" id="rST-W8-ioW"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kHf-gV-qT3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1457" y="-380"/>
         </scene>
         <!--Where Are You Studying?-->
         <scene sceneID="MEN-YB-Nga">
@@ -176,12 +185,18 @@
                                         <rect key="frame" x="217" y="153" width="166" height="56"/>
                                         <animations/>
                                     </pickerView>
-                                    <pickerView contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="k8p-no-Qym">
+                                    <pickerView contentMode="center" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="k8p-no-Qym">
                                         <rect key="frame" x="94" y="57" width="413" height="56"/>
                                         <animations/>
                                     </pickerView>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Course Code (Optional)" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="r0l-WV-DCt">
-                                        <rect key="frame" x="184" y="341" width="233" height="30"/>
+                                        <rect key="frame" x="184" y="322" width="233" height="30"/>
+                                        <animations/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <textInputTraits key="textInputTraits" returnKeyType="go"/>
+                                    </textField>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Phone Number" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gxg-U6-C8J">
+                                        <rect key="frame" x="184" y="358" width="233" height="30"/>
                                         <animations/>
                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                         <textInputTraits key="textInputTraits" returnKeyType="go"/>
@@ -233,7 +248,8 @@
                         <outlet property="myPicker1" destination="k8p-no-Qym" id="wdg-sh-nun"/>
                         <outlet property="myPicker2" destination="WR6-o9-OcM" id="7EC-12-L2z"/>
                         <outlet property="myPicker3" destination="stB-PV-3sf" id="htb-rs-ycV"/>
-                        <outlet property="whatStudying" destination="r0l-WV-DCt" id="tKv-Yh-xh9"/>
+                        <outlet property="phoneNumber" destination="gxg-U6-C8J" id="125-D4-bPQ"/>
+                        <outlet property="whatStudying" destination="r0l-WV-DCt" id="bn4-hF-TAm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7wQ-bK-gmw" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -414,9 +430,9 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="HLL-8k-xVy" kind="relationship" relationship="viewControllers" id="Mdq-hv-iOn"/>
                         <segue destination="8rJ-Kc-sve" kind="relationship" relationship="viewControllers" id="9Nk-S2-RVl"/>
                         <segue destination="tSc-l2-ZgJ" kind="relationship" relationship="viewControllers" id="POk-od-5uM"/>
+                        <segue destination="iGT-eb-Tfx" kind="relationship" relationship="viewControllers" id="AG4-ig-qSF"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>

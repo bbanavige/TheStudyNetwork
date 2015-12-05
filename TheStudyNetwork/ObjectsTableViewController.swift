@@ -54,17 +54,14 @@ class ObjectsTableViewController: PFQueryTableViewController {
                 
                 if let subject = object?["Subject"] as? String {
                     if let courseCode = object?["courseCode"] as? String {
-                    cell.subject.text = subject + " " + courseCode
+                        //if let workType = object?["workType"] as? String {
+                            cell.subject.text = subject + " " + courseCode// + ": " + workType
+                        //}
                     }
                 }
-               // let UserObject = PFObject(className: "User")
-//                UserObject["name"] = name
-//                UserObject["facebookid"] = facebookid
-//                UserObject["email"] = email
-            
-                
-               // name = ""
-                //facebookid = ""
+                //if let phoneNumber = object?["phoneNumber"] as? String {
+                    //cell.didSendButtonTitle.setTitle("SMS: \(phoneNumber)", forState: UIControlState.Normal)
+                //}
             }
             else
             {
@@ -72,24 +69,7 @@ class ObjectsTableViewController: PFQueryTableViewController {
             }
         })
         
-        /*var cell = tableView.dequeueReusableCellWithIdentifier("Cell") as! customCell!
-        if cell == nil {
-            cell = customCell(style: UITableViewCellStyle.Default, reuseIdentifier: "Cell")
-        }
-        
-        
-        
-        // Extract values from the PFObject to display in the table cell
-        if let name = object?["name"] as? String {
-            cell?.userName?.text = name
-            print(name)
-        }
-        
-        if let facebookid = result["facebookid"] as? String {
-            cell?.facebookID?.text = facebookid
-            print("id: \(facebookid)")
-        }*/
-        
+        cell.delegate = self as? sendMessageProtocol
         return cell
     }
 
