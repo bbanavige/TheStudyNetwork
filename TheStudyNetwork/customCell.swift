@@ -18,12 +18,22 @@ protocol sendMessageProtocol : NSObjectProtocol {
 
 class customCell: PFTableViewCell {
     
+    //gita
+    var parseObject: PFObject?
+    
     weak var delegate: sendMessageProtocol?
     
-    @IBAction func sendTextMessageButtonTapped(sender: UIButton!, viewController: UIViewController!) {
-        
-    }
 
+    @IBOutlet weak var buttonInfo: UIButton!
+    
+    @IBAction func sendTextMessageButtonTapped(sender: UIButton!, viewController: UIViewController!) {
+        //gita code
+        textMessageRecipients.removeAll()
+        textMessageRecipients.append(allPhoneNumbers[buttonInfo.tag])
+        print("recipients: \(textMessageRecipients), tag: \(buttonInfo.tag)")
+    }
+    
+    
     @IBOutlet weak var userName: UILabel!
     @IBOutlet weak var subject: UILabel!
     @IBOutlet weak var location: UILabel!

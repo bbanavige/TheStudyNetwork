@@ -9,6 +9,7 @@
 import Foundation
 import MessageUI
 
+var allPhoneNumbers: [String] = ["ready"]
 var textMessageRecipients = ["111-111-1111"] // for pre-populating the recipients list (optional, depending on your needs)
 
 class messageController: NSObject, MFMessageComposeViewControllerDelegate {
@@ -16,6 +17,10 @@ class messageController: NSObject, MFMessageComposeViewControllerDelegate {
     func canSendText() -> Bool {
         return MFMessageComposeViewController.canSendText()
     }
+    
+    
+    
+    
     
     // Configures and returns a MFMessageComposeViewController instance
     func configuredMessageComposeViewController() -> MFMessageComposeViewController {

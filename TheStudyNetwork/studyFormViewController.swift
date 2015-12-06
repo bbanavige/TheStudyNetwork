@@ -25,18 +25,22 @@ class studyFormViewController: UIViewController,UIPickerViewDataSource,UIPickerV
     
     @IBOutlet weak var phoneNumber: UITextField!
     
+    @IBOutlet weak var pickerView1TextField: UITextField!
+    //@IBOutlet weak var textField1: UITextField!
+    
+    
     //location
-    @IBOutlet weak var myPicker1: UIPickerView!
+    @IBOutlet weak var myPicker1: UIPickerView! = UIPickerView()
     var Location = ""
     let picker1Data = ["Are You Actually Studying?", "Where're you studying?", "Widener", "Lamont", "Cabot Science Library", "Science Center", "Annenberg", "Law School Library", "Yard", "Adams", "Cabot", "Currier", "Dunster", "Eliot", "Kirkland", "Leverett", "Lowell", "Mather", "Pforzheimer", "Quincy", "Winthrop"]
     
     //Subject
-    @IBOutlet weak var myPicker2: UIPickerView!
+    @IBOutlet weak var myPicker2: UIPickerView! = UIPickerView()
     var Subject = ""
     let picker2Data = ["What're You Studying?", "Aesthetic and Interpretive Understanding", "African and African American Studies", "Anthropology", "Applied Mathematics", "Applied Physics", "Astronomy",  "Bioengineering", "Celtic Languages and Literatures", "Chemistry and Chemical Biology", "Computer Science",  "The Classics", "Comparative Literature",  "Culture and Belief", "Earth and Planetary Sciences", "East Asian Languages and Civilizations", "Economics", "Electrical Engineering", "Empirical and Mathematical Reasoning", "English", "Environmental Science & Engineering", "Ethical Reasoning", "Germanic Languages and Literatures", "Government", "History", "History of Art and Architecture", "History of Science", "Human Evolutionary Biology", "Linguistics", "Materials Science & Mechanical Engineering", "Mathematics", "Molecular and Cellular Biology", "Music", "Near Eastern Languages and Civilizations", "Organismic and Evolutionary Biology", "Philosophy", "Physics", "Psychology", "Romance Languages and Literatures", "Science of Living Systems", "Science of the Physical Universe", "Slavic Languages and Literatures", "Societies of the World", "Sociology", "South Asian Studies", "Statistics", "Stem Cell and Regenerative Biology", "United States in the World",  "Visual and Environmental Studies"]
     
     //workType
-    @IBOutlet weak var myPicker3: UIPickerView!
+    @IBOutlet weak var myPicker3: UIPickerView! = UIPickerView()
     var workType = ""
     let picker3Data = ["What are you Working on?", "Lab", "Paper", "Presentation", "Project", "Pset", "Quiz", "Studying", "Test", "Other"]
     
@@ -48,7 +52,15 @@ class studyFormViewController: UIViewController,UIPickerViewDataSource,UIPickerV
         myPicker2.dataSource = self
         myPicker3.delegate = self
         myPicker3.dataSource = self
+        //pickerView1TextField.inputView = myPicker1
+        //myPicker1.hidden = true
+        //print("Here")
     }
+    
+    /*func attachToPicker(textField: UITextField, picker: UIPickerView){
+        picker.delegate = self
+        picker.dataSource = self
+    }*/
     
     //
     
@@ -88,6 +100,9 @@ class studyFormViewController: UIViewController,UIPickerViewDataSource,UIPickerV
             Location = picker1Data[row]
             print(row)
             print("Location: \(Location)")
+            //pickerView1TextField.text = picker1Data[0]
+            //myPicker1.hidden = true
+           // print("here2")
         }
         else if (pickerView == myPicker2){
             Subject = picker2Data[row]
@@ -102,7 +117,10 @@ class studyFormViewController: UIViewController,UIPickerViewDataSource,UIPickerV
         
     }
     
-
+    func textFieldShouldBeginEditing(textField: UITextField) -> Bool {
+        myPicker1.hidden = false
+        return false
+    }
 
 
     @IBAction func Submit(sender: AnyObject) {

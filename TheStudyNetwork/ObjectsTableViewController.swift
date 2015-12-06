@@ -11,6 +11,8 @@ import UIKit
 import ParseUI
 import Bolts
 
+var buttonIndex:Int = 1
+
 class ObjectsTableViewController: PFQueryTableViewController {
     
     // Initialise the PFQueryTable tableview
@@ -31,11 +33,12 @@ class ObjectsTableViewController: PFQueryTableViewController {
     // Define the query that will provide the data for the table view
     override func queryForTable() -> PFQuery{
         var query = PFQuery(className: "User")
-        query.orderByAscending("facebookid")
+        query.orderByAscending("Subject")
         return query
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath, object: PFObject?) -> PFTableViewCell {
+        
         
         var cell = tableView.dequeueReusableCellWithIdentifier("Cell") as! customCell!
         
@@ -54,14 +57,17 @@ class ObjectsTableViewController: PFQueryTableViewController {
                 
                 if let subject = object?["Subject"] as? String {
                     if let courseCode = object?["courseCode"] as? String {
-                        //if let workType = object?["workType"] as? String {
-                            cell.subject.text = subject + " " + courseCode// + ": " + workType
-                        //}
+                        if let workType = object?["worktype"] as? String {
+                        cell.subject.text = subject + " " + courseCode + ": " + workType
+                        }
                     }
                 }
-                //if let phoneNumber = object?["phoneNumber"] as? String {
-                    //cell.didSendButtonTitle.setTitle("SMS: \(phoneNumber)", forState: UIControlState.Normal)
-                //}
+                if let phoneNumber = object?["phoneNumber"] as? String {
+                    allPhoneNumbers.append(phoneNumber)
+                    print(allPhoneNumbers)
+                }
+                cell.buttonInfo.tag = buttonIndex
+                buttonIndex++
             }
             else
             {
@@ -72,90 +78,5 @@ class ObjectsTableViewController: PFQueryTableViewController {
         cell.delegate = self as? sendMessageProtocol
         return cell
     }
-
+    
 }
-/*
-import UIKit
-import Parse
-import ParseUI
-
-class ObjectsTableViewController: PFQueryTableViewController {
-
-    override init(style: UITableViewStyle, className: String!) {
-        super.init(style: style, className: className)
-    }
-    
-    required init(coder aDecoder: NSCoder){
-        super.init(coder: aDecoder)!
-        self.parseClassName = "User"
-        self.textKey = "facebookid"
-        self.pullToRefreshEnabled = true
-        self.paginationEnabled = true
-        self.objectsPerPage = 8
-    }
-    
-    override func queryForTable() -> PFQuery {
-        var query = PFQuery(className: "User")
-        query.orderByAscending("facebookid")
-        return query
-    }
-    
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath, object: PFObject?) -> PFTableViewCell {
-        
-        var cell = tableView.dequeueReusableCellWithIdentifier("Cell") as! PFTableViewCell!
-        
-        if cell == nil {
-            cell = PFTableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: "Cell")
-        }
-        
-        // extract values
-        if let userid = object?["facebookid"] as? String{
-            cell?.detailTextLabel?.text = userid
-        }
-        
-        if let nameUser = object?["name"] as? String{
-            cell?.detailTextLabel?.text = nameUser
-        }
-        
-        return cell
-        
-    }
-
-*/
-
-/*override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath, object: PFObject?) -> PFTableViewCell {
-    
-    var cell = tableView.dequeueReusableCellWithIdentifier("Cell") as! customCell!
-    
-    let accessToken = FBSDKAccessToken.currentAccessToken()
-    let req = FBSDKGraphRequest(graphPath: "me", parameters: ["fields":"email,name"], tokenString: accessToken.tokenString, version: nil, HTTPMethod: "GET")
-    req.startWithCompletionHandler({ (connection, result, error : NSError!) -> Void in
-        if(error == nil)
-        {
-            print("result \(result["name"])")
-            if let name = result?["name"] as? String {
-                cell.userName.text = name
-            }
-            if let facebookid = result?["id"] as? String {
-                cell.facebookID.text = facebookid
-            }
-            
-            // send to parse
-            let UserObject = PFObject(className: "User")
-            //                UserObject["name"] = name
-            //                UserObject["facebookid"] = facebookid
-            //                UserObject["email"] = email
-            
-            UserObject.saveInBackgroundWithBlock{
-                (success: Bool, error: NSError?) -> Void in
-            }
-            
-            // name = ""
-            //facebookid = ""
-        }
-        else
-        {
-            print("error \(error)")
-        }
-    })
-*/
